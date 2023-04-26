@@ -16,4 +16,10 @@ func TestFindLinearSearch(t *testing.T) {
   if (!isNeedleFound || foundNeedleIndex != needleIndex) {
     t.Fatalf("Linear search algo not found seeked needle")
   }
+
+  _, isNeedleFound = FindLinearSearch(-1, make([]int, 0))
+
+  if (isNeedleFound) {
+    t.Fatalf("Linear search finds needle in empty array")
+  }
 }
