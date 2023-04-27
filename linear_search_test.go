@@ -6,20 +6,20 @@ import (
 )
 
 func TestFindLinearSearch(t *testing.T) {
-  randomNumberArray := utils.GetRandomNumberArray()
-  sortedRandomNumberArray := SelectionSort(randomNumberArray)
+	randomNumberArray := utils.GetRandomNumberArray()
+	sortedRandomNumberArray := SelectionSort(randomNumberArray)
 
-  needleIndex := len(sortedRandomNumberArray) / 2
+	needleIndex := len(sortedRandomNumberArray) / 2
 
-  foundNeedleIndex, isNeedleFound := FindLinearSearch(sortedRandomNumberArray[needleIndex], sortedRandomNumberArray)
+	foundNeedleIndex, isNeedleFound := FindLinearSearch(sortedRandomNumberArray[needleIndex], sortedRandomNumberArray)
 
-  if (!isNeedleFound || foundNeedleIndex != needleIndex) {
-    t.Fatalf("Linear search algo not found seeked needle")
-  }
+	if !isNeedleFound || foundNeedleIndex != needleIndex {
+		t.Fatalf("Linear search algo not found seeked needle")
+	}
 
-  _, isNeedleFound = FindLinearSearch(-1, make([]int, 0))
+	_, isNeedleFound = FindLinearSearch(-1, make([]int, 0))
 
-  if (isNeedleFound) {
-    t.Fatalf("Linear search finds needle in empty array")
-  }
+	if isNeedleFound {
+		t.Fatalf("Linear search finds needle in empty array")
+	}
 }
