@@ -1,7 +1,7 @@
 package main
 
 import (
-	"algosGo/utils"
+	"algos/utils"
 	"testing"
 )
 
